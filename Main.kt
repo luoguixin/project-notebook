@@ -7,4 +7,15 @@ class Main {
 
 fun main() {
    Main().say()
+    Dog().apply {
+        say()
+        sayAge()
+        sayName()
+    }
+    Animal().apply {
+        say()
+        sayAge()
+        sayName()
+    }
+
 }
