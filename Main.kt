@@ -1,8 +1,15 @@
-import java.util.TreeMap
+import java.time.LocalTime
+import java.util.*
+data class Person(val name: String, val age: Int)
 
 class Main {
     fun say(){
         println("hello")
+    }
+    fun a(vararg s:Int){
+        s.forEach {
+            println(it)
+        }
     }
 
 }
@@ -46,4 +53,25 @@ fun main() {
             println("没有在")
         }
     }
+//    val lists = (1 .. 10000).toList()
+//    println(lists)
+    val list = arrayListOf<Int>()
+    for (i in 1 .. 100000){
+        if ( i% 2 == 0 && i% 5 == 0 && i%3 == 0){
+            list.add(i)
+        }
+    }
+    println(list.size)
+    println(LocalTime.now().second)
+
+    val person = Person("Tom", 20)
+
+    val result: String = person.run {
+        println("Name: $name")
+        println("Age: $age")
+        "My name is $name and I am $age years old." //run是返回最后一个的值，而apply返回的是对象本身
+    } //run函数的使用方法
+
+    println(result) // 输出："My name is Tom and I am 20 years old."
+    Main().a(1,2,3,4,5,6,7,8) //多参数
 }
