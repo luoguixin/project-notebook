@@ -1,3 +1,10 @@
+class Main {
+    fun say(){
+        println("hello")
+    }
+
+}
+
 fun main() {
-    println("hello word")
+   Main().say()
 }
