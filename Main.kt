@@ -1,6 +1,6 @@
 import java.time.LocalTime
 import java.util.*
-data class Person(val name: String, val age: Int)
+data class Person(val name: String, val age: Int) //定义多返回值
 
 class Main {
     fun say(){
