@@ -17,5 +17,7 @@ fun main() {
         sayAge()
         sayName()
     }
+    val animal = Animal()
+    println(animal.name)
 
 }
