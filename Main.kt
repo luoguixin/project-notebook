@@ -69,9 +69,9 @@ fun main() {
     val result: String = person.run {
         println("Name: $name")
         println("Age: $age")
-        "My name is $name and I am $age years old." //run是返回最后一个的值，而apply返回的是对象本身
+        "My name is $name ,and I am $age years old." //run是返回最后一个的值，而apply返回的是对象本身
     } //run函数的使用方法
 
-    println(result) // 输出："My name is Tom and I am 20 years old."
+    println(result) // 输出："My name is Tom, and I am 20 years old."
     Main().a(1,2,3,4,5,6,7,8) //多参数
 }
