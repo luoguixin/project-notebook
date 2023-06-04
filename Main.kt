@@ -1,3 +1,4 @@
+import java.io.*
 import java.time.LocalTime
 import java.util.*
 data class Person(val name: String, val age: Int) //定义多返回值
@@ -74,4 +75,27 @@ fun main() {
 
     println(result) // 输出："My name is Tom, and I am 20 years old."
     Main().a(1,2,3,4,5,6,7,8) //多参数
+
+//    FileOutputStream("example.txt").use { //use相当于 try-with-resources
+//        val output = BufferedWriter(Writer.nullWriter())
+//        output.write("你好啊")
+//        // 使用 input 进行操作
+//    }
+    /*
+    * try {
+    FileInputStream("example.txt").use {
+        val input = BufferedInputStream(it)
+        // 处理文件数据
+        // 如果在操作过程中出现异常，将抛出异常并终止代码执行
+    }
+} catch (e: Exception) {
+    // 处理异常
+} finally {
+    // 执行必要的清理操作，如关闭数据库连接等
+}*/
+    println("请输入您的名字：")
+    val name = readlnOrNull() // 从控制台读取一行文本
+    val file = File("example.txt") // 打开或创建文件对象
+    name?.let { file.writeText(it) } // 将文本写入文件
+    println("已保存用户输入到文件中")
 }
