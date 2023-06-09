@@ -14,6 +14,19 @@ class Main {
     }
 
 }
+fun bubbleSort(arr: IntArray) {
+    val n = arr.size
+    for (i in 0 until n - 1) {
+        for (j in 0 until n - i - 1) {
+            if (arr[j] > arr[j + 1]) {
+                // 交换相邻的两个数
+                val temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
+    }
+}
 
 fun main() {
    Main().say()
@@ -98,4 +111,8 @@ fun main() {
     val file = File("example.txt") // 打开或创建文件对象
     name?.let { file.writeText(it) } // 将文本写入文件
     println("已保存用户输入到文件中")
+    val arr = intArrayOf(64, 34, 25, 12, 22, 11, 90)
+    bubbleSort(arr)
+    println("排序后的数组：${arr.contentToString()}") // 输出：排序后的数组：[11, 12, 22, 25, 34, 64, 90]
+
 }
